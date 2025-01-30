@@ -17,6 +17,9 @@ maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
 maven.install(
     artifacts = [
         "junit:junit:4.12",
+        "org.junit.jupiter:junit-jupiter:5.11.2",
+        "org.junit.jupiter:junit-jupiter-api:5.11.2",
+        "org.junit.platform:junit-platform-console:1.11.2",
         "com.google.code.gson:gson:2.11.0"
     ],
     fetch_sources = True,
