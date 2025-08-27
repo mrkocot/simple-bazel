@@ -8,6 +8,20 @@ bazel_dep(name = "rules_java", version = "7.8.0")
 bazel_dep(name = "rules_kotlin", version = "1.9.6")
 
 bazel_dep(name = "rules_jvm_external", version = "6.2")
+bazel_dep(name = "contrib_rules_jvm", version = "0.28.0")
+
+bazel_dep(name = "rules_python", version = "1.1.0")
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(python_version = "3.8", is_default = True)
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+pip.parse(
+    hub_name = "pypi",
+    python_version = "3.8",
+    requirements_lock = "//:requirements_lock.txt",
+)
+use_repo(pip, "pypi")
 
 # register_toolchains(
 #     "//:kotlin_toolchain",
@@ -20,7 +34,11 @@ maven.install(
         "org.junit.jupiter:junit-jupiter:5.11.2",
         "org.junit.jupiter:junit-jupiter-api:5.11.2",
         "org.junit.platform:junit-platform-console:1.11.2",
-        "com.google.code.gson:gson:2.11.0"
+        "com.google.code.gson:gson:2.11.0",
+        "io.kotest:kotest-assertions-api-jvm:5.9.1",
+        "io.kotest:kotest-assertions-core-jvm:5.9.1",
+        "io.kotest:kotest-assertions-shared-jvm:5.9.1",
+        "io.kotest:kotest-common-jvm:5.9.1",
     ],
     fetch_sources = True,
     repositories = [

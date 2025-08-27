@@ -23,4 +23,13 @@ public class MathJ4Test {
   public void wrongTest() {
     Assert.assertEquals(4, 0);
   }
+
+//    @Test
+//    public void waitTest() {
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 }

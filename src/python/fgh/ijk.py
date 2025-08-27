@@ -1,4 +1,5 @@
 from src.python.fgh import pqr
+import math
 
 def plus(a, b):
     return a + b
@@ -13,6 +14,8 @@ the_list = [
     (1, 2, 3),
     pqr.glue,
 ]
+
+sinus = math.sin(40)
 
 rg = list(range(1, 11, 1))
 print(pqr.glue(*rg))

@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MathJ5Test {
+public class MathJ5TestBackup {
   @DisplayName("Add test")
   @Test
   public void addTest() {
@@ -25,21 +25,18 @@ public class MathJ5Test {
       }
     }
 
-    @DisplayName("Multiply test")
     @Test
     public void multiplyTest() {
       assertEquals(28, 4 * 7);
     }
   }
 
-  @DisplayName("Wrong test")
   @Test
   public void wrongTest() {
     assertEquals(4, 0);
   }
 
   @Disabled
-  @DisplayName("Disabled test")
   @Test
   public void disabledTest() {
     assertEquals(555, 111);
