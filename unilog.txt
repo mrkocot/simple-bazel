@@ -1,0 +1,3 @@
+Relative path:
+> toString(): src/kotlin/numberer/Hello8523.java
+> toURI(): file:///Users/mkocot/Documents/semi/tests/simple-bazel/src/kotlin/numberer/Hello8523.java
