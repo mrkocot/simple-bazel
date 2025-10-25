@@ -1,9 +1,0 @@
-targets:
-  //...
-
-directories:
-  .
-
-additional_languages:
-  python
-  kotlin
