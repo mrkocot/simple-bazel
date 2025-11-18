@@ -1,0 +1,30 @@
+java_library(
+    name = "nothing",
+    srcs = ["Nothing.java"],
+)
+
+java_library(
+    name = "runtime",
+    srcs = ["Runtime.java"],
+)
+
+java_library(
+    name = "multiply",
+    srcs = ["Multiply.java"],
+    deps = [":nothing"],
+)
+
+java_library(
+    name = "square",
+    srcs = ["Square.java"],
+    deps = [":multiply"],
+    runtime_deps = [":runtime"],
+)
+
+java_binary(
+    name = "perform",
+    srcs = ["Perform.java"],
+    deps = [":square"],
+    runtime_deps = [":runtime"],
+    main_class = "deps.Perform",
+)
