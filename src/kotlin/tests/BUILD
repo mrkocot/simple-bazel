@@ -17,13 +17,6 @@ java_junit5_test(
     deps = JUNIT5_DEPS,
 )
 
-java_junit5_test(
-    name = "MathTest_junit5_backup",
-    srcs = ["MathJ5TestBackup.java"],
-    test_class = "tests.MathJ5TestBackup",
-    deps = JUNIT5_DEPS,
-)
-
 kt_junit4_test(
     name = "Kotlin_junit4",
     srcs = ["KotlinJ4Test.kt"],

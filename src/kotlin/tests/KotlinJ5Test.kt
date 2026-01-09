@@ -1,5 +1,6 @@
 package tests
 
+import io.kotest.matchers.booleans.shouldBeTrue
 import io.kotest.matchers.ints.shouldBeExactly
 import io.kotest.matchers.nulls.shouldBeNull
 import org.junit.jupiter.api.Nested
@@ -19,6 +20,14 @@ class KotlinJ5Test {
         fun `test with multiple words`() {
             val nothing = emptyList<String>().firstOrNull()
             nothing.shouldBeNull()
+        }
+
+        @Nested
+        inner class EvenDeeper {
+            @Test
+            fun `a very deep $ test`() {
+                true.shouldBeTrue()
+            }
         }
     }
 }
