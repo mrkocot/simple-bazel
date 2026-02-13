@@ -11,7 +11,7 @@ java_binary(
 java_binary(
   name = "NumberPrinter2",
   srcs = ["NumberPrinter.java"],
-  resources = glob(["KotlinPrinter.kt", "*.txt"]),
+  resources = glob(["KotlinPrinter.kt", "*.txt"], allow_empty = True,),
   main_class = "numberer.NumberPrinter"
 )
 
