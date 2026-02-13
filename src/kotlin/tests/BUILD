@@ -2,6 +2,7 @@
 load("//src/macros:testing.bzl", "kt_junit4_test", "kt_junit5_test", "JUNIT5_DEPS")
 load("@contrib_rules_jvm//docs:stardoc-input.bzl", "java_junit5_test")
 load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_test")
+load("@rules_java//java:java_test.bzl", "java_test")
 
 java_test(
     name = "MathTest_junit4",

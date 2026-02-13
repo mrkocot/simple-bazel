@@ -1,4 +1,5 @@
 load("//src/macros:another.bzl", "add_numbers", "wait_millions")
+load("@rules_java//java:java_binary.bzl", "java_binary")
 
 top_level = [False, 42]
 
@@ -23,7 +24,7 @@ def multiple_java_binaries(number, name, srcs, main_class):
         else:
             full_name = name + str(i + 1)
         
-        native.java_binary(
+        java_binary(
             name = full_name,
             srcs = srcs,
             main_class = main_class,

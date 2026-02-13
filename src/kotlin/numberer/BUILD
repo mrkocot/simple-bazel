@@ -1,3 +1,4 @@
+load("@rules_java//java:java_binary.bzl", "java_binary")
 load("//src/macros:simple.bzl", "multiple_java_binaries")
 load("@rules_kotlin//kotlin:jvm.bzl", "kt_jvm_binary")
 
