@@ -8,23 +8,23 @@ local_path_override(
     path = "nested",
 )
 
-bazel_dep(name = "bazel_skylib", version = "1.8.2")
-
-bazel_dep(name = "rules_java", version = "9.0.3")
-bazel_dep(name = "rules_kotlin", version = "1.9.6")
-
-bazel_dep(name = "rules_jvm_external", version = "6.7")
-bazel_dep(name = "contrib_rules_jvm", version = "0.28.0")
-
-bazel_dep(name = "rules_python", version = "1.7.0")
+bazel_dep(name = "bazel_skylib", version = "1.9.0")
+bazel_dep(name = "rules_java", version = "9.5.0")
+bazel_dep(name = "rules_kotlin", version = "2.2.2")
+bazel_dep(name = "rules_jvm_external", version = "6.10")
+bazel_dep(name = "contrib_rules_jvm", version = "0.32.0")
+bazel_dep(name = "rules_python", version = "1.8.4")
+bazel_dep(name = "rules_android", version = "0.7.1")
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
-python.toolchain(python_version = "3.8", is_default = True)
+python.defaults(python_version = "3.12")
+python.toolchain(python_version = "3.12")  # py_binary(..., python_version = "3.12")
+python.toolchain(python_version = "3.11")  # py_binary(..., python_version = "3.11")
 
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
 pip.parse(
     hub_name = "pypi",
-    python_version = "3.8",
+    python_version = "3.12",
     requirements_lock = "//:requirements_lock.txt",
 )
 use_repo(pip, "pypi")
@@ -47,6 +47,10 @@ maven.install(
         "io.kotest:kotest-common-jvm:5.9.1",
     ],
     fetch_sources = True,
+    known_contributing_modules = [
+        "nested",
+        "protobuf",
+    ],
     repositories = [
         "https://repo.maven.apache.org/maven2",
     ],
