@@ -10,6 +10,9 @@ bazel_dep(name = "rules_kotlin", version = "1.9.6")
 bazel_dep(name = "rules_jvm_external", version = "6.2")
 bazel_dep(name = "contrib_rules_jvm", version = "0.28.0")
 
+bazel_dep(name = "rules_python", version = "1.8.4")
+bazel_dep(name = "aspect_rules_py", version = "1.11.2")
+
 # register_toolchains(
 #     "//:kotlin_toolchain",
 # )

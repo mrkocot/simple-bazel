@@ -1,5 +1,3 @@
-# my_project/tests/test_example.py
-
 import pytest
 
 # A simple function to be tested
@@ -55,5 +53,8 @@ def test_new_feature():
 def test_old_feature():
     # Some old test logic
     assert 1 == 1
+
+if __name__ == "__main__":
+    pytest.main()
 
 # Tomon was here
