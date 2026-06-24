@@ -1,4 +1,5 @@
 import pytest
+import time
 
 # A simple function to be tested
 def add(x, y):
@@ -10,6 +11,14 @@ def test_add_positive_numbers():
 
 def test_add_negative_numbers():
     assert add(-1, -5) == -6
+
+def test_that_takes_long():
+    time.sleep(5)
+    assert add(2, 2) == 4
+    
+def test_that_will_fail():
+    five = 5
+    assert 2 + 2 == five
 
 # A test class
 class TestStringOperations:
